@@ -11,6 +11,7 @@ jobs:
     with:
       target: stage
       service-name: serverless
+    secrets: inherit
 
   finish:
     runs-on: ubuntu-latest
