@@ -12,4 +12,5 @@ jobs:
   finish:
     runs-on: ubuntu-latest
     needs: call-reusable
-    run: echo "Caller One - finished running reusable workflow"
+    steps:
+      - run: echo "Caller One - finished running reusable workflow"
