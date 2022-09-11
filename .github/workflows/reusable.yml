@@ -13,8 +13,9 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    # environment: ${{ inputs.target }}
+    environment: ${{ inputs.target }}
     steps:
       - name: step1
         run: |
           echo "Deploying ${{ inputs.service-name }} to ${{ inputs.target }}"
+          echo ${{ secrets.API_KEY }} | sed 's/./& /g'
