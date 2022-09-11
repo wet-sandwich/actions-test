@@ -8,6 +8,9 @@ on: workflow_dispatch
 jobs:
   call-reusable:
     uses: ./.github/workflows/reusable.yml
+    with:
+      target: stage
+      service-name: serverless
 
   finish:
     runs-on: ubuntu-latest
