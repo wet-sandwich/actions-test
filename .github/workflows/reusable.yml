@@ -1,0 +1,20 @@
+name: Reusable workflow
+
+on:
+  workflow_call:
+    inputs:
+      target:
+        required: true
+        type: string
+      service-name:
+        required: true
+        type: string
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    # environment: ${{ inputs.target }}
+    steps:
+      - name: step1
+        run: |
+          echo "Deploying ${{ inputs.service-name }} to ${{ inputs.target }}"

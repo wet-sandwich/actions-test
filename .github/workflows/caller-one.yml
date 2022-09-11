@@ -1,0 +1,15 @@
+name: Caller One
+
+on: workflow_dispatch
+# on:
+#   pull_request:
+#     types: [closed]
+
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/reusable.yml
+
+  finish:
+    runs-on: ubuntu-latest
+    needs: call-reusable
+    run: echo "Caller One - finished running reusable workflow"
