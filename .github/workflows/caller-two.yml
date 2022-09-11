@@ -1,20 +1,20 @@
-name: Caller One
+name: Caller Two
 
 on:
   push:
     branches:
-      - stage
+      - main
 
 jobs:
   call-reusable:
     uses: ./.github/workflows/reusable.yml
     with:
-      target: stage
-      service-name: serverless-stage
+      target: prod
+      service-name: serverless-prod
     secrets: inherit
 
   finish:
     runs-on: ubuntu-latest
     needs: call-reusable
     steps:
-      - run: echo "Caller One - finished running reusable workflow"
+      - run: echo "Caller Two - finished running reusable workflow"
