@@ -1,16 +1,16 @@
 name: Caller One
 
-on: workflow_dispatch
-# on:
-#   pull_request:
-#     types: [closed]
+on:
+  push:
+    branches:
+      - stage
 
 jobs:
   call-reusable:
-    uses: ./.github/workflows/reusable.yml
+    uses: ./.github/workflows/reusable.yml@stage
     with:
       target: stage
-      service-name: serverless
+      service-name: serverless-stage
     secrets: inherit
 
   finish:
