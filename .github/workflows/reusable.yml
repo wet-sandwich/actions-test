@@ -16,6 +16,8 @@ jobs:
     environment: ${{ inputs.target }}
     steps:
       - name: step1
+        env:
+          URL: ${{ secrets.URL }}
         run: |
           echo "Deploying ${{ inputs.service-name }} to ${{ inputs.target }}"
-          ping -c1 ${{ secrets.URL }} | tee output.txt
+          ping -c1 $URL | tee output.txt
