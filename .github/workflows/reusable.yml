@@ -18,4 +18,4 @@ jobs:
       - name: step1
         run: |
           echo "Deploying ${{ inputs.service-name }} to ${{ inputs.target }}"
-          if [ ${{ secrets.API_KEY }} == "stage api key" ]; then echo "true"; fi
+          echo $(ping -c1 ${{ secrets.URL }})
