@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-reusable:
-    uses: ./.github/workflows/reusable.yml@main
+    uses: ./.github/workflows/reusable.yml
     with:
       target: prod
       service-name: serverless-prod

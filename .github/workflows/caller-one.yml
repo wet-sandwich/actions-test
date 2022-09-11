@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-reusable:
-    uses: ./.github/workflows/reusable.yml@stage
+    uses: ./.github/workflows/reusable.yml
     with:
       target: stage
       service-name: serverless-stage
