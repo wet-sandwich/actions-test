@@ -23,14 +23,14 @@ jobs:
           ping -c1 $URL | tee output.txt
 
       - name: Test replace-tokens
-        working-directory: ./src/folder
         uses: cschleiden/replace-tokens@v1.1
         with:
           files: "config.json"
         env:
           API_KEY: notarealkey
+        working-directory: ./src/folder
 
       - name: Verify replace-tokens
-        working-directory: ./src/folder
         run: |
           cat ./src/folder/config.json
+        working-directory: ./src/folder
