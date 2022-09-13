@@ -15,9 +15,20 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.target }}
     steps:
-      - name: step1
+      - name: Test environment secrets
         env:
           URL: ${{ secrets.URL }}
         run: |
           echo "Deploying ${{ inputs.service-name }} to ${{ inputs.target }}"
           ping -c1 $URL | tee output.txt
+
+      - name: Test replace-tokens
+        uses: cschleiden/replace-tokens@v1.1
+        with:
+          files: ".src/folder/config.json"
+        env:
+          API_KEY: notarealkey
+
+      - name: Verify replace-tokens
+        run: |
+          cat ./src/folder/config.json
