@@ -28,7 +28,7 @@ jobs:
       - name: Test replace-tokens
         uses: cschleiden/replace-tokens@v1.1
         with:
-          files: "[**/config.json]"
+          files: "['**/config.json']"
         env:
           API_KEY: notarealkey
 
