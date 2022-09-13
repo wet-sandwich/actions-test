@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.target }}
     steps:
+      - name: Add repo
+        uses: actions/checkout@v3
+
       - name: Test environment secrets
         env:
           URL: ${{ secrets.URL }}
@@ -32,4 +35,4 @@ jobs:
       - name: Verify replace-tokens
         run: |
           cat ./src/folder/config.json
-        working-directory: src/folder
+        working-directory: ./src/folder
