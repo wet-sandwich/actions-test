@@ -26,9 +26,9 @@ jobs:
         uses: cschleiden/replace-tokens@v1.1
         with:
           files: "config.json"
+          working-directory: ./src/folder
         env:
           API_KEY: notarealkey
-        working-directory: ./src/folder
 
       - name: Verify replace-tokens
         run: |
