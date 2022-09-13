@@ -34,5 +34,5 @@ jobs:
 
       - name: Verify replace-tokens
         run: |
-          cat ./src/folder/config.json
+          cat config.json
         working-directory: ./src/folder
